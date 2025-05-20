@@ -1,4 +1,4 @@
-# Cell
+# CyberSleuth
 
 **CyberSleuth: Your Automated Digital Probe & Initial Access Mapper for Web Reconnaissance.**
 
