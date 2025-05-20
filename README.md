@@ -85,4 +85,31 @@ Make sure you have the following tools installed and available in your `$PATH`. 
 Run the script with the target domain as an argument:
 
 ```bash
+
+
+
+📂 Output Structure
+Results will be saved in a directory structure like this:
+recon_results/
+└── <target_domain>_<timestamp>/
+    ├── subdomains/
+    │   ├── subdomains_raw.txt        # Raw output from Sublist3r
+    │   ├── live_subdomains.txt       # Live subdomains (full URLs from httpx)
+    │   └── live_hostnames_for_wayback.txt # Hostnames only for waybackurls
+    ├── ffuf/
+    │   └── <hostname>_ffuf.json      # FFUF results for each live host (JSON format)
+    ├── wayback_data/
+    │   └── all_historical_urls.txt   # Unique URLs from waybackurls
+    ├── entry_points/
+    │   ├── entry_points_basic_params.txt # URLs with parameters from waybackurls
+    │   ├── live_entry_points_params.txt  # Live URLs (non-404) with parameters
+    │   ├── gf_xss.txt                # Potential XSS entry points (if gf used)
+    │   ├── gf_sqli.txt               # Potential SQLi entry points (if gf used)
+    │   └── ...                       # Other gf pattern outputs
+    └── logs/
+        ├── CyberSleuth_run.log       # Main log for the script execution
+        ├── sublist3r.log             # Log for Sublist3r
+        ├── httpx_probe.log           # Log for httpx
+        ├── ffuf_<hostname>.log       # Log for FFUF on each host
+        └── waybackurls.log           # Log for waybackurls
 ./cybersleuth.sh <target_domain>
