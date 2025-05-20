@@ -38,25 +38,6 @@ if [[ $EUID -eq 0 ]]; then FFUF_WORDLIST_DIR_EFFECTIVE="/usr/share/seclists/Disc
 else FFUF_WORDLIST_DIR_EFFECTIVE="$HOME/wordlists"; fi
 FFUF_WORDLIST="${FFUF_WORDLIST_DIR_EFFECTIVE}/${FFUF_WORDLIST_FILENAME}"
 
-print_banner() {
-    echo -e "${C_CYAN}"
-    echo "                      .--\"\"--."
-    echo "                     /        \\"
-    echo "                    |   ⊙ ►    |  "
-    echo "                     \\  .--.  /"
-    echo "                      '-|__|-'  "
-    echo "                         \\  /   "
-    echo "                          \\/    "
-    echo -e "${C_GREEN}"
-    echo " ____      _        ____            _       _     "
-    echo "/ ___| ___| | ___  / ___| ___ _   _| |_ __ | | ___ "
-    echo "\\___ \\ / _ \\ |/ _ \\ \\___ \\/ __| | | | | '_ \\| |/ _ \\"
-    echo " ___) |  __/ |  __/  ___) \\__ \\ |_| | | |_) | |  __/"
-    echo "|____/ \\___|_|\\___| |____/|___/\\__,_|_| .__/|_|\\___|"
-    echo "                                      |_|          "
-    echo -e "${C_PURPLE}         Digital Probe & Initial Access Mapper v2.3 ${C_RESET}"
-    echo -e "${C_CYAN}=============================================================================${C_RESET}"
-}
 
 _log() { echo -e "$1[$2]${C_RESET} $3"; }
 log_info() { _log "${C_BLUE}" "INFO" "$1"; }
@@ -93,7 +74,7 @@ download_wordlist_if_needed() {
 }
 
 
-print_banner
+
 TARGET_DOMAIN="${1:-$DEFAULT_TARGET_DOMAIN}"
 if [ -z "$TARGET_DOMAIN" ]; then log_error "No target domain. Usage: $0 <domain>"; exit 1; fi
 
