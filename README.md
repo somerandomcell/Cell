@@ -107,4 +107,3 @@ recon_results/
         ├── httpx_probe.log           # Log for httpx
         ├── ffuf_<hostname>.log       # Log for FFUF on each host
         └── waybackurls.log           # Log for waybackurls
-./cybersleuth.sh <target_domain>
