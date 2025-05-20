@@ -80,16 +80,11 @@ Make sure you have the following tools installed and available in your `$PATH`. 
 4.  **(Optional) Configure Tool Paths & Settings:**
     Open `cybersleuth.sh` in a text editor and modify the variables under the `# --- User Configuration ---` section if needed (e.g., if your tools are not in the default PATH, or to change FFUF settings).
 
-## 🚀 Usage
-
-Run the script with the target domain as an argument:
+## 📂 Output Structure
 
 ```bash
 
 
-
-📂 Output Structure
-Results will be saved in a directory structure like this:
 recon_results/
 └── <target_domain>_<timestamp>/
     ├── subdomains/
